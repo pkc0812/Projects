@@ -1,0 +1,32 @@
+# Automated CI/CD Pipeline
+
+This project implements an automated CI/CD pipeline for deploying a Node.js web application using Docker, Kubernetes, Ansible, Jenkins, Git, and GitHub.
+
+## Tech Stack
+- **Version Control**: Git, GitHub
+- **CI/CD**: Jenkins
+- **Containerization**: Docker
+- **Orchestration**: Kubernetes
+- **Configuration**: Ansible
+
+## Pipeline Workflow
+1. **Code Commit**: Push code to GitHub.
+2. **Build & Test**: Jenkins builds a Docker image and runs tests.
+3. **Push to Registry**: Docker image is pushed to Docker Hub.
+4. **Provision Infrastructure**: Ansible sets up the environment.
+5. **Deploy**: Kubernetes deploys the application.
+
+## Setup Instructions
+1. Clone the repo: `git clone https://github.com/your-username/ci-cd-pipeline.git`
+2. Install prerequisites: Docker, Minikube, kubectl, Ansible, Jenkins.
+3. Build Docker image: `cd app && docker build -t my-app:latest .`
+4. Run tests: `docker run my-app:latest npm test`
+5. Deploy to Kubernetes: `kubectl apply -f kubernetes/`
+6. Run Ansible: `ansible-playbook -i ansible/inventory.ini ansible/playbook.yml`
+7. Access the app: `minikube service my-app-service --url`
+
+## Demo
+[Add screenshots or a GIF of the app/pipeline if possible]
+
+## License
+MIT
